@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" verbose="1" >
+    <test name="Pets">
+        <classes>
+            <class name="io.swagger.petstore.tests.deletePetByIdTests"/>
+            <class name="io.swagger.petstore.tests.getPetByStatusTests"/>
+            <class name="io.swagger.petstore.tests.postPetTests"/>
+            <class name="io.swagger.petstore.tests.putPetTests"/>
+        </classes>
+    </test>
+</suite>
