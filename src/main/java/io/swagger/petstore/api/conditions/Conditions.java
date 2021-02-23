@@ -1,6 +1,5 @@
 package io.swagger.petstore.api.conditions;
 
-import io.qameta.allure.Step;
 import org.hamcrest.Matcher;
 
 public final class Conditions {

@@ -14,7 +14,7 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class ApiService {
 
-  protected RequestSpecification setup() {
+  protected RequestSpecification setUp() {
 
     return RestAssured
         .given().contentType(ContentType.JSON)

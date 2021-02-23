@@ -10,12 +10,19 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class ApplicationManager {
 
-  private final ProjectConfig config = ConfigFactory.create(ProjectConfig.class,
-      System.getProperties());
-  private final Faker faker = new Faker(new Locale(config.locale()));
-  private final PetApiService petApiService = new PetApiService();
-  private final ObjectMapper mapper = new ObjectMapper();
-  private final Assertions assertions = new Assertions();
+  public static ProjectConfig config;
+  private Faker faker;
+  private PetApiService petApiService;
+  private ObjectMapper mapper;
+  private Assertions assertions;
+
+  public void init() {
+    config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+    faker = new Faker(new Locale(config.locale()));
+    petApiService = new PetApiService();
+    mapper = new ObjectMapper();
+    assertions = new Assertions();
+  }
 
   public ApplicationManager() {
   }

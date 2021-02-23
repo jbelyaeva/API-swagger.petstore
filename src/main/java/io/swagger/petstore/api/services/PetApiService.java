@@ -8,7 +8,7 @@ public class PetApiService extends ApiService {
 
   @Step("Добавляем питомца")
   public AssertableResponse postPet(Pet pet) {
-    return new AssertableResponse(setup()
+    return new AssertableResponse(setUp()
         .body(pet)
         .when()
         .post("/pet"));
@@ -16,7 +16,7 @@ public class PetApiService extends ApiService {
 
   @Step("Обновляем питомца")
   public AssertableResponse putPet(Pet pet) {
-    return new AssertableResponse(setup()
+    return new AssertableResponse(setUp()
         .body(pet)
         .when()
         .put("/pet"));
@@ -24,21 +24,21 @@ public class PetApiService extends ApiService {
 
   @Step("Ищем питомца по статусу")
   public AssertableResponse getPetByStatus(String status) {
-    return new AssertableResponse(setup()
+    return new AssertableResponse(setUp()
         .when()
         .get("/pet/findByStatus?status=" + status));
   }
 
   @Step("Ищем питомца по id")
   public AssertableResponse getPetById(String id) {
-    return new AssertableResponse(setup()
+    return new AssertableResponse(setUp()
         .when()
         .get("/pet/" + id));
   }
 
   @Step("Удаляем питомца по id")
   public AssertableResponse deletePetById(String id) {
-    return new AssertableResponse(setup()
+    return new AssertableResponse(setUp()
         .when()
         .delete("/pet/" + id));
   }
